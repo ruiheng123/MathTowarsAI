@@ -1,5 +1,7 @@
 # LLM 学习过程
 
+---
+
 课程传送门请点击这里：[![Dynamic Badge](https://img.shields.io/badge/课程-blue?style=for-the-badge)](https://www.datawhale.cn/learn/summary/107)
 
 本repo 为参考 人大高瓴人工智能学院 文继荣 （Ruc AI Box 团队）所做笔记。
