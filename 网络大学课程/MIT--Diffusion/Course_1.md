@@ -51,7 +51,7 @@ $\psi: \mathbb{R}^d\times [0, 1]\to \mathbb{R}^d , \quad (x_0, t) \mapsto \psi_t
 
 $\begin{cases} \dfrac{\mathrm d \psi_t(x_0)}{\mathrm d t} & = u_t(\psi_t(x_0)) \\ \psi_0(x_0) & = x_0 \end{cases}$
 
-这样，对于给定的初值 $X_0 = x_0$，可以得到其中间一刻的点。$X_t = \psi_t(x_0)$。注意这里的大 $X$ 其实是表达成了一个函数，而 $x_0$ 这个小 $x$ 是特定的点元素。于是我们有如下关系
+这样，对于给定的初值 $X_0 = x_0$，可以得到其中间一刻的点。 $X_t = \psi_t(x_0)$。注意这里的大 $X$ 其实是表达成了一个函数，而 $x_0$ 这个小 $x$ 是特定的点元素。于是我们有如下关系
 
 - 向量场一般是一个速度场，其输入一个点（包括时空信息 $x, t$ ）返回整个场中该点的变化趋势，也就是“速度”。
 - 整个向量场是一个速度场，其可以定义一个 ODE 常微分方程
@@ -74,7 +74,7 @@ $\begin{cases} \dfrac{\mathrm d \psi_t(x_0)}{\mathrm d t} & = u_t(\psi_t(x_0)) \
 
 $\begin{cases} \dfrac{\mathrm d X_t}{\mathrm d t}  = u_t^\theta(X_t) \\ X_0 \sim p_{\text{init}} \end{cases}$
 
-其中我们用一个神经网络将这个 vector field 速度场 $u(t, x) = u_t(x)$ 参数化为 $u^theta(t, x) = u_t^\theta(x)$。我们的目标就是希望通过这一 ODE 求出的轨迹在 $t=1$ 终值时符合 $p_{\text{data}}$ 数据的分布。也就是对于其解 $\psi_t^\theta(x_0)$ 在 $t=1$时
+其中我们用一个神经网络将这个 vector field 速度场 $u(t, x) = u_t(x)$ 参数化为 $u^\theta(t, x) = u_t^\theta(x)$。我们的目标就是希望通过这一 ODE 求出的轨迹在 $t=1$ 终值时符合 $p_{\text{data}}$ 数据的分布。也就是对于其解 $\psi_t^\theta(x_0)$ 在 $t=1$时
 
 $X_1 \sim p_{\text{data}}\quad \Leftrightarrow\quad \psi^\theta(1, x_0) = \psi_{1}^\theta(x_0) \sim p_{\text{data}}$
 
