@@ -2,7 +2,7 @@
 
 ---
 
-[![arXiv](https://img.shields.io/badge/arXiv-2406.09246-df2a2a.svg?style=for-the-badge)](https://arxiv.org/abs/2302.13971)  [![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)](https://github.com/facebookresearch/llama) [![HF Models](https://img.shields.io/badge/%F0%9F%A4%97-Models-yellow?style=for-the-badge)](https://huggingface.co/meta-llama)
+[![arXiv](https://img.shields.io/badge/arXiv-2302.13971-df2a2a.svg?style=for-the-badge)](https://arxiv.org/abs/2302.13971)  [![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)](https://github.com/facebookresearch/llama) [![HF Models](https://img.shields.io/badge/%F0%9F%A4%97-Models-yellow?style=for-the-badge)](https://huggingface.co/meta-llama)
 
 每个人对大语言模型的 github 代码学习，想必八成都是从 llama 系列开始的！毕竟当初，为了对抗 OpenAI 在 GPT 上的闭源。
 
