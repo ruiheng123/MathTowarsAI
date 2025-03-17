@@ -89,7 +89,7 @@ $X_1 \sim p_{\text{data}}\quad \Leftrightarrow\quad \psi^\theta(1, x_0) = \psi_{
 
 $X: [0, 1] \to \mathbb{R}^d,\quad t\mapsto X_t$ 对于每个 $X$ 是一个随机的轨迹！ SDE 通过一个布朗运动建立，这个过程 $W = (W_t)_{0\leq t \leq 1}$ 满足：$W_0 = 0$，以及
 
-- 正态分布的可加性：$W_t - W_s \sim \mathcal N (0, (t-s)I)$，每次过一个时间步，就相当于概率密度函数中的正态分布方差增加。
+- 正态分布的可加性： $W_t - W_s \sim \mathcal N (0, (t-s)I)$，每次过一个时间步，就相当于概率密度函数中的正态分布方差增加。
 - 可加关系是独立的：也就是相邻两次的递增 --- $W_1 - W_0$、$W_2 - W_1$ 等，都是独立的随机变量
 
 这个布朗运动也叫维纳过程，我们也可以如下表示：对于步长 $h>0$，我们设置 $W_0 = 0$，有
@@ -102,11 +102,11 @@ $\dfrac{\mathrm d X_t}{\mathrm d t} = u_t(X_t) \Leftrightarrow X_{t+h} - X_t = h
 
 这里面当 $h$ 足够小时最右边的 $R(h)$ 误差可以忽略不计。现在我们要像这个 ODE 中引入一些随机的过程项，使之变为 SDE：
 
-$ X_{t+h} = X_t + h u_t(X_t) +  \sigma_t(W_{t+h}-W_t) + hR_t(h) $
+$X_{t+h} = X_t + h u_t(X_t) +  \sigma_t(W_{t+h}-W_t) + hR_t(h)$
 
 这里面 SDE 里，$u_t(X_t)$ 是 drift coefficient，而 $\sigma_t$ 是 diffusion coefficient。这个 SDE 我们可以写为
 
-$ \mathrm d X_t = u_t(X_t) \mathrm d t + \sigma_t \mathrm d W_t; \quad X_0 = x_0$
+$\mathrm d X_t = u_t(X_t) \mathrm d t + \sigma_t \mathrm d W_t; \quad X_0 = x_0$
 
 这也就是类似可以如下定义 Diffusion Model：
 
@@ -114,6 +114,6 @@ $\begin{cases} \mathrm d X_t  = u_t^\theta(X_t) \mathrm d t+ \sigma_t \mathrm d 
 
 类比在 ODE 中的 $X_{t+h} = X_t + h u_t^\theta (X_t)$ 的一阶 Euler 法，我们可以类似定义 $X_0 = x_0$ 用 Euler-Maruyama 法得到 SDE 的类似数值采样过程为
 
-$ X_{t+h} = X_t + h u_t^\theta (X_t) + \sqrt{h}\sigma_t \epsilon_t, \quad \epsilon_t \sim \mathcal N(0, I)$
+$X_{t+h} = X_t + h u_t^\theta (X_t) + \sqrt{h}\sigma_t \epsilon_t, \quad \epsilon_t \sim \mathcal N(0, I)$
 
 同样，我们的目标是希望到 $t=1$ 时还原回数据中的分布 $X_1 \sim p_{\text{data}}$
