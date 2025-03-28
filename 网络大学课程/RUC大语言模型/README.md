@@ -11,7 +11,7 @@
 |  章节  |    内容    |                                    更新进度                                    |     笔记位置     |
 | :----: | :--------: | :----------------------------------------------------------------------------: | :--------------: |
 | 第一章 | 大模型初识 | ![Dynamic Badge](https://img.shields.io/badge/已完成-green?style=for-the-badge) | [第一章](第一章.md) |
-| 第二章 | 基础架构  | ![Dynamic Badge](https://img.shields.io/badge/进行中-yellow?style=for-the-badge)| [第二章](第二章.md) |
+| 第二章 | 基础架构  | ![Dynamic Badge](https://img.shields.io/badge/已完成-green?style=for-the-badge)| [第二章](第二章.md) |
 | 第三章 |            |                                                                                |                  |
 | 第四章 |            |                                                                                |                  |
 | 第五章 |            |                                                                                |                  |
