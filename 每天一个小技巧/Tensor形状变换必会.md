@@ -83,7 +83,7 @@ y.storage()
 
 可以看到，`y` 仍然按照 `x` 的存储 storage 顺序去存的。
 
-### 改变维度
+## 改变维度
 
 **`view` 和 `reshape`的区别**
 
@@ -134,7 +134,7 @@ x.transpose(0, 1) # x改变连续
 x.permute(1, 0) # 改变连续
 
 x.transpose(0, 1).is_contiguous() # False
-x.permute(1, 0).is_contiguous() # Fals3
+x.permute(1, 0).is_contiguous() # False
 
 x.transpose(0, 1).data_ptr() == x.permute(1, 0).data_ptr() # True
 ```
@@ -142,3 +142,29 @@ x.transpose(0, 1).data_ptr() == x.permute(1, 0).data_ptr() # True
 实际上，会发现 `transpose` 和 `permute` 这两者都会把原来连续的 `tensor` 变得不连续。一般都是交换了维度。
 
 不过值得一提的是，`transpose` 仅限于交换 2 个维度，且 `transpose(a, b)` 和 `transpose(b, a)` 没有区别，都是交换第 `a` 维 和第 `b` 维。而 `permute` 可以一次按顺序把多个维度重排，但是里面必须是全部的维度，且必须写排后的顺序才行！前者适合简单数据，后者更适合复杂数据。
+
+## 扩展与重复
+
+这里讲一讲 `expand` 和 `repeat` 这俩操作的用法
+
+```py
+x = torch.tensor([[1], [2], [3]])  # shape [3,1]
+y = x.expand(3, 4)
+y.shape # torch.Size([3, 4])
+
+z = x.repeat(3, 4)
+z.shape # torch.Size([9, 4])
+```
+
+`expand` 将张量中大小为1的维度。扩展到指定尺寸（通过广播机制）。**只能扩展大小为1的维度，否则会报错**。也可以使用 -1 表示原维度不变。其等价于
+
+```
+A = torch.cat([x for _ in range(3)], dim=1)
+```
+
+`repeat` 沿着指定的维度重复张量的元素。是针对所有的维度重复。如 `(x, y).repeat(a, b)` ，则shape 为 `(x*a, y*b)`。这个其实等价于
+
+```
+A = torch.cat([x for _ in range(a)], dim=0)
+B = torch.cat([A for _ in range(b)], dim=1)
+```
